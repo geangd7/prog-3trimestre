@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dossiê</title>
+    <style>
+        /* Estilos CSS (mantidos os mesmos) */
+        body {
+            background-color: #FFC0CB; /* Fundo rosa claro */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Ajustado para alinhar no topo */
+            height: 100vh;
+        }
+        
+        header {
+            background-color: #FF1493; /* Fundo branco para o cabeçalho */
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        #titulo {
+            text-align: center; /* Centraliza o título */
+            margin-top: 20px; /* Espaço do topo */
+            width: 400px;
+            height: 600px;
+        }
+
+        .conteudo {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .precoseingredientes {
+            display: none;
+            padding: 20px;
+        }
+
+        .botao-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50vh; /* Move o botão para a metade da página */
+        }
+
+        .botao {
+            background-color: #FF1493; /* Cor do botão */
+            color: #FFF; /* Cor do texto do botão */
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            width: 200px;
+        }
+        /* Estilo para imagens dentro de elementos com a classe .imagem */
+        .imagem img {
+            width: 350px;
+            height: 175px;
+        }
+    </style>
+</head>
+<body>
+    <div id="titulo">
+        
+        <img src="Dossiê.png" alt=" ">
+    </div>
+
+    <div class="botao-container">
+        <!-- Adicionei um botão para o Espetinho Gourmet -->
+        <button class="botao" onclick="mostrarConteudo('morango')">Espetinhos de Morango</button>
+        <button class="botao" onclick="mostrarConteudo('uva')">Espetinhos de Uva</button>
+        <button class="botao" onclick="mostrarConteudo('gourmet')">Espetinho Gourmet</button>
+    </div>
+
+    <div class="conteudo" id="morango-conteudo">
+        <!-- Conteúdo do Espetinho de Morango (mantido o mesmo) -->
+        <h2>Espetinho Morango</h2>
+        <p>Espetinho de morango com chocolate.</p>
+        <h3>Ingredientes</h3>
+        <p>Morango e chocolate</p>
+        <h3>Preços</h3>
+        <p>R$ 5,00 "Unidade"</p>
+        <div class="imagem">
+           <img src="M.png" alt=" ">
+        </div>
+        <!-- ... -->
+    </div>
+
+    <div class="conteudo" id="uva-conteudo">
+        <!-- Conteúdo do Espetinho de Uva (mantido o mesmo) -->
+        <h2>Espetinho Uva</h2>
+        <p>Espetinho de uva com chocolate.</p>
+        <h3>Ingredientes</h3>
+        <p>Uva chocolate</p>
+        <h3>Preços</h3>
+        <p>R$ 5,00 "Unidade"</p>
+        <div class="imagem">
+           <img src="u.png" alt=" ">
+        </div>
+        <!-- ... -->
+    </div>
+
+    <div class="conteudo" id="gourmet-conteudo">
+        <!-- Conteúdo do Espetinho Gourmet -->
+        <h2>Espetinho Gourmet</h2>
+        <p>Espetinho de uva e morango, com chocolate e confetes.</p>
+        <h3>Ingredientes</h3>
+        <p>Uva, morango, confetes e chocolate</p>
+        <h3>Preços</h3>
+        <p>R$ 7,00 "Unidade"</p>
+        <div class="imagem">
+            <!-- Adicione a imagem do Espetinho Gourmet aqui -->
+            <img src="G.png" alt=" ">
+        </div>
+    </div>
+
+    <script>
+        function mostrarConteudo(fruta) {
+            var morangoConteudo = document.getElementById("morango-conteudo");
+            var uvaConteudo = document.getElementById("uva-conteudo");
+            var gourmetConteudo = document.getElementById("gourmet-conteudo");
+
+            if (fruta === 'morango') {
+                morangoConteudo.style.display = "block";
+                uvaConteudo.style.display = "none";
+                gourmetConteudo.style.display = "none";
+            } else if (fruta === 'uva') {
+                morangoConteudo.style.display = "none";
+                uvaConteudo.style.display = "block";
+                gourmetConteudo.style.display = "none";
+            } else if (fruta === 'gourmet') {
+                morangoConteudo.style.display = "none";
+                uvaConteudo.style.display = "none";
+                gourmetConteudo.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
